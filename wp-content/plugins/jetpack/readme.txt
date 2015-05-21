@@ -1,7 +1,7 @@
 === Jetpack by WordPress.com ===
 Contributors: automattic, alternatekev, andy, apeatling, azaozz, barry, beaulebens, blobaugh, cfinke, chellycat, danielbachhuber, daniloercoli, designsimply, dsmart, eoigal, ethitter, gibrown, georgestephanis, hew, hugobaeta, iammattthomas, jblz, jeherve, jkudish, Joen, johnjamesjacoby, jshreve, kraftbj, lancewillett, martinremy, matt, matveb, maverick3x6, mcsf, mdawaffe, migueluy, nickmomrik, obenland, pento, professor44, richardmtl, roccotripaldi, samhotchkiss, sdquirk, stephdau, tmoorewp, Viper007Bond, westi, yoavf, zinigor
 Tags: WordPress.com, statistics, stats, views, tweets, twitter, widget, gravatar, hovercards, profile, equations, latex, math, maths, youtube, shortcode, archives, audio, blip, bliptv, dailymotion, digg, flickr, googlevideo, google, googlemaps, kyte, kytetv, livevideo, redlasso, rockyou, rss, scribd, slide, slideshare, soundcloud, vimeo, shortlinks, wp.me, subscriptions, notifications, notes, json, api, rest, mosaic, gallery, slideshow, videopress, monitor, search, omnisearch, sso, jet pack
-Stable tag: 3.4
+Stable tag: 3.5
 Requires at least: 4.1
 Tested up to: 4.2
 
@@ -102,11 +102,11 @@ Learn more (and get detailed instructions) in our [contribute guide](http://jetp
 
 = 3.5 =
 Release Date: April 23rd, 2015
-Release Post: http://jetpack.me/2016/04/23/jetpack-3-5-menu-management/
 
-Jetpack 3.5 introduces the ability to manage your site's menus directly from WordPress.com, a new "Upcoming Events" widget, and several bug fixes and enhancements.  This upgrade is recommended for all users.
+Release Post: http://jetpack.me/2015/04/23/jetpack-3-5-menu-management/
 
-* Enhancement: Extra Sidebar Widgets: Add in Upcoming Events widget
+Jetpack 3.5 introduces the ability to manage your site's menus directly from WordPress.com and several bug fixes and enhancements.  This upgrade is recommended for all users.
+
 * Enhancement: General: Change security reporting to use a transient instead of option to reduce backup load
 * Enhancement: General: Improve module search
 * Enhancement: JSON API: Allow users to manage menus through WordPress.com
@@ -150,6 +150,7 @@ Release Date: March 19th, 2015
 
 = 3.4 =
 Release Date: March 18th, 2015
+
 Release Post: http://jetpack.me/2015/03/17/jetpack-3-4-protect-secure-and-simplify/
 
 * Enhancement : Config Settings: provide a notification for users that update features settings

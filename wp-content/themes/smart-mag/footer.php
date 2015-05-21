@@ -1,4 +1,3 @@
-
 	<footer class="main-footer">
 	
 	<?php if (!Bunyad::options()->disable_footer): ?>
@@ -37,7 +36,7 @@
 				<span><a href="http://qwerty.ie/">Web Agency</a> - Qwerty.ie</span>
 			</span>
 			<span class="pull-right">
-				<span>Copyright © 2014 <a href="http://www.headstuff.org">Headstuff.org</a>. All Rights Reserved.</span>
+				<span>Copyright © 2015 <a href="http://www.headstuff.org">HeadStuff.org</a>. All Rights Reserved.</span>
 			</span>
 		</div>
 	</div>

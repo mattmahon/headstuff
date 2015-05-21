@@ -112,7 +112,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 	 * @return  bool        Whether or not the meta box (and associated columns etc) should be hidden
 	 */
 	function is_metabox_hidden( $post_type = null ) {
-		if ( ! isset( $post_type ) ) {
+	  if ( ! isset( $post_type ) ) {
 			if ( isset( $GLOBALS['post'] ) && ( is_object( $GLOBALS['post'] ) && isset( $GLOBALS['post']->post_type ) ) ) {
 				$post_type = $GLOBALS['post']->post_type;
 			}
@@ -127,7 +127,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 			$options = get_option( 'wpseo_titles' );
 
 			return ( ( isset( $options[ 'hideeditbox-' . $post_type ] ) && $options[ 'hideeditbox-' . $post_type ] === true ) || in_array( $post_type, $cpts ) === false );
-		}
+			}
 		return false;
 	}
 
@@ -471,7 +471,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 
 		if ( is_array( $post_types ) && $post_types !== array() ) {
 			foreach ( $post_types as $post_type ) {
-				if ( $this->is_metabox_hidden( $post_type ) === false ) {
+			  if ( $this->is_metabox_hidden( $post_type ) === false ) {
 					add_meta_box( 'wpseo_meta', __( 'WordPress SEO by Yoast', 'wordpress-seo' ), array(
 						$this,
 						'meta_box',

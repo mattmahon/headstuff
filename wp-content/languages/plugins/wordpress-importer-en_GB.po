@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1000\n"
+"X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Development (trunk)\n"
 
 #: wordpress-importer.php:1017
@@ -98,7 +98,6 @@ msgstr "This does not appear to be a WXR file, missing/invalid WXR version numbe
 msgid "Details are shown above. The importer will now try again with a different parser..."
 msgstr "Details are shown above. The importer will now try again with a different parser..."
 
-#. Description of the plugin/theme
 msgid "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file."
 msgstr "Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file."
 
@@ -126,7 +125,6 @@ msgstr "or assign posts to an existing user:"
 msgid "Remote file is incorrect size"
 msgstr "Remote file is incorrect size"
 
-#. Author URI of the plugin/theme
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
@@ -134,7 +132,6 @@ msgstr "http://wordpress.org/"
 msgid "Download and import file attachments"
 msgstr "Download and import file attachments"
 
-#. Plugin Name of the plugin/theme
 msgid "WordPress Importer"
 msgstr "WordPress Importer"
 
@@ -183,11 +180,9 @@ msgstr "Import <strong>posts, pages, comments, custom fields, categories, and ta
 msgid "Sorry, there has been an error."
 msgstr "Sorry, there has been an error."
 
-#. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/wordpress-importer/"
 msgstr "http://wordpress.org/extend/plugins/wordpress-importer/"
 
-#. Author of the plugin/theme
 msgid "wordpressdotorg"
 msgstr "wordpressdotorg"
 
@@ -195,10 +190,10 @@ msgstr "wordpressdotorg"
 msgid "Assign Authors"
 msgstr "Assign Authors"
 
-#: wordpress-importer.php:994
-msgid "Import WordPress"
-msgstr "Import WordPress"
-
 #: wordpress-importer.php:1016
 msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
 msgstr "Hi there! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
+
+#: wordpress-importer.php:994
+msgid "Import WordPress"
+msgstr "Import WordPress"
