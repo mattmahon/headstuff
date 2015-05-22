@@ -48,23 +48,23 @@ $title = "";
 
 if(is_single()) {
 
-	$postID = get_the_ID();
+$postID = get_the_ID();
 
-	$catID= $wpdb->get_var( $wpdb->prepare( 
+$catID= $wpdb->get_var( $wpdb->prepare( 
 
-	"
+"
 
-	SELECT meta_value
+SELECT meta_value
 
-	FROM $wpdb->postmeta 
+FROM $wpdb->postmeta 
 
-	WHERE meta_key = '_category_permalink' 
+WHERE meta_key = '_category_permalink' 
 
-	AND post_id = %s
+AND post_id = %s
 
-	", 
+", 
 
-	$postID 
+$postID 
 
 ) );
 
@@ -81,15 +81,15 @@ if(isset($catDetail->name)) {
 
 if($catName == '') {
 
-	$category = get_the_category(); 
+$category = get_the_category(); 
 
-	if($category)
+if($category)
 
-	{
+{
 
-		$catName = $category[0]->cat_name;
+$catName = $category[0]->cat_name;
 
-}	
+}
 
 }
 
@@ -104,7 +104,6 @@ if($catName == '') {
 $catName = $catName;
 
 } 
-
 
 else
 
@@ -125,6 +124,7 @@ elseif (is_page()){
 $title = get_the_title();
 
 //if($title == '' || $title == 'Legends of the Months')
+
   
 
 if($title != 'Topical' && $title != 'History' && $title != 'Literature' && $title != 'Science' && $title != 'Visual' && $title != 'Humour' && $title != 'Music' && $title != 'Film' ) 
@@ -135,21 +135,10 @@ $title = 'Home';
 
 }
 
-elseif($title == 'contact'){
+elseif($title == 'Contact Us'){
 
 $title = 'Contact';
 
-}
-
-elseif($title == 'Podcast') {
-	
-	$title = 'Podcast';
-	
-}
-
-elseif($title == 'Products') {
-	
-	$title == 'Shop';
 }
 
 $header_image = $logo_url.$title.".png";
@@ -161,20 +150,21 @@ $header_image = $logo_url.$title.".png";
 elseif(is_category()) {
 
 	$title = single_cat_title("", false);
-  	if($title == 'Podcast') {
-		$logo_url = "http://headstuff.org/wp-content/uploads/2015/02/Podcast.png";
+  	if($title == 'Podcast' || $title == 'Shop') {
+		$logo_url = "http://headstuff.org/wp-content/uploads/2015/02/";
   	}
-	
-	if($title == 'Products') {
-		$logo_url = "http://headstuff.org/wp-content/uploads/2015/02/Shop.png";
-	}
   	
 	$categoryID = get_cat_ID($title);
   	$categoryName = get_cat_name($categoryID);
 	$ancestors = get_ancestors($categoryID, 'category');
   
   	if (empty($ancestors) == false) {
-		$ancestorCategoryID = $ancestors[0];
+		if(count($ancestors > 1)){
+			$size = count($ancestors)-1;
+			$ancestorCategoryID = $ancestors[$size];
+		}
+		else {$ancestorCategoryID = $ancestors[0];}
+		
 		$ancestorTitle = get_cat_name($ancestorCategoryID);
 		$header_image = $logo_url.$ancestorTitle.".png";
 
@@ -195,7 +185,9 @@ elseif(is_category()) {
 
 
 ?>
-  <!--<script>
+  <!--SWITCHING UNIVERSAL ANALYTICS FOR TAG MANAGER CODE
+
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -205,13 +197,24 @@ elseif(is_category()) {
 	ga('require', 'displayfeatures');
   ga('send', 'pageview');
 
-
 </script>-->
 
+  <script src="//load.sumome.com/" data-sumo-site-id="c961d81bb3cf6d95c21b23befe893c40710513702cbcca89ea6edc2a6f10424d" async="async"></script>
 
 </head>
 
 <body <?php body_class(); ?>>
+  
+ <!--Google Tag Manager -->
+  <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5XB79W"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5XB79W');</script>-->
+<!-- End Google Tag Manager -->
+
 
 <div class="main-wrap">
 
@@ -258,8 +261,8 @@ elseif(is_category()) {
 		
 		<div class="wrap">
 		
-		  <header class="<?php echo $title ?>"><?php var_dump($categoryName); var_dump($title); var_dump(count($ancestors)); ?>--!>
-			  <div class="title"><?php echo("<p>"+ is_archive()+"</p>") ;?><?php echo("<p>"+ is_page()+"</p>") ;?>
+		  <header class="<?php echo $title ?>">
+			  <div class="title">
 				<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
 				  <?php if (Bunyad::options()->image_logo): // custom logo ?>
 				  
@@ -279,7 +282,7 @@ elseif(is_category()) {
 					<?php 
 						dynamic_sidebar('header-right');
 					?>
-				</div>
+				</div><!--<?php echo("<br />"); var_dump($categoryName); echo("Count ".count($ancestors)); echo("Page ".is_page()." "); echo("Arch ".is_archive()." "); echo("Cat ".is_category()); ?>-->
 			</header>
 			
 			<nav class="navigation cf" data-sticky-nav="<?php echo Bunyad::options()->sticky_nav; ?>">
