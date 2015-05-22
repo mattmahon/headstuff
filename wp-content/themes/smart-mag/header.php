@@ -159,7 +159,12 @@ elseif(is_category()) {
 	$ancestors = get_ancestors($categoryID, 'category');
   
   	if (empty($ancestors) == false) {
-		$ancestorCategoryID = $ancestors[0];
+		if(count($ancestors > 1)){
+			$size = count($ancestors)-1;
+			$ancestorCategoryID = $ancestors[$size];
+		}
+		else {$ancestorCategoryID = $ancestors[0];}
+		
 		$ancestorTitle = get_cat_name($ancestorCategoryID);
 		$header_image = $logo_url.$ancestorTitle.".png";
 
@@ -201,13 +206,13 @@ elseif(is_category()) {
 <body <?php body_class(); ?>>
   
  <!--Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5XB79W"
+  <!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5XB79W"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5XB79W');</script>
+  })(window,document,'script','dataLayer','GTM-5XB79W');</script>-->
 <!-- End Google Tag Manager -->
 
 
@@ -256,7 +261,7 @@ elseif(is_category()) {
 		
 		<div class="wrap">
 		
-		  <header class="<?php echo $title ?>"><!--<?php var_dump($categoryName); var_dump($title); var_dump(count($ancestors)); ?>--!>
+		  <header class="<?php echo $title ?>">
 			  <div class="title">
 				<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
 				  <?php if (Bunyad::options()->image_logo): // custom logo ?>
@@ -277,7 +282,7 @@ elseif(is_category()) {
 					<?php 
 						dynamic_sidebar('header-right');
 					?>
-				</div>
+				</div><!--<?php echo("<br />"); var_dump($categoryName); echo("Count ".count($ancestors)); echo("Page ".is_page()." "); echo("Arch ".is_archive()." "); echo("Cat ".is_category()); ?>-->
 			</header>
 			
 			<nav class="navigation cf" data-sticky-nav="<?php echo Bunyad::options()->sticky_nav; ?>">
